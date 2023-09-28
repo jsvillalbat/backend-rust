@@ -1,0 +1,13 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - master      # main o master, dependiendo cómo se llama la rama principal de tu proyecto en GitHub
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: bervProject/railway-deploy@main
+          with:
+            railway_token: ${{ secrets.RAILWAY_TOKEN }}
+            service: "blog-platzi"
